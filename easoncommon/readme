@@ -1,0 +1,35 @@
+ali Arouter使用配置说明：
+    依赖参见gradle
+    ------配置于有需要跳转的module  defaultConfig下（不一定所有module都要加）
+            javaCompileOptions {
+                annotationProcessorOptions {
+                    arguments = [ moduleName : project.getName() ]
+                }
+            }
+    ------需要跳转的module依赖，进行注解解释和java文件生成
+    annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
+
+ali freeline 插件 提高编译速度
+
+
+链接网易mumu模拟器  adb  connect 127.0.0.1:7555
+
+
+
+
+
+
+
+--------查看gradle依赖树
+./gradlew app:dependencies --configuration releaseRuntimeClasspath
+
+gradle 相关学习：https://www.cnblogs.com/laughingQing/p/5855774.html
+
+
+
+
+----photo pick lib
+CursorLoader 实现数据库实时刷新
+
+//设置不获取焦点时 底部输入框不向上移动
+ ((Activity) context1).getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_ADJUST_PAN | WindowManager.LayoutParams.SOFT_INPUT_STATE_HIDDEN);

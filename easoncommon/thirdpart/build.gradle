@@ -1,0 +1,68 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 28
+
+
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        main() {
+            res.srcDirs = [
+                    "src/main/res",
+                    "src/main/res/modules/photopick",
+                    "src/main/res/modules/http"
+            ]
+        }
+    }
+}
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation 'com.android.support:recyclerview-v7:27.1.1'
+
+    api 'com.squareup.retrofit2:retrofit:2.3.0'//导入retrofit
+    api 'com.google.code.gson:gson:2.8.5'//Gson 库
+    //下面两个是RxJava 和 RxAndroid
+    api 'io.reactivex.rxjava2:rxandroid:2.0.2'
+    api 'io.reactivex.rxjava2:rxjava:2.1.9'
+    implementation 'com.squareup.retrofit2:converter-gson:2.3.0'//转换器，请求结果转换成Model
+    implementation 'com.squareup.retrofit2:adapter-rxjava2:2.3.0'//配合Rxjava 使用
+    implementation 'com.squareup.okhttp3:logging-interceptor:3.5.0'//日志拦截器
+    //<photo pick lib>
+    api 'com.github.bumptech.glide:glide:4.7.1'
+    implementation 'com.squareup.picasso:picasso:2.5.2'
+    api 'it.sephiroth.android.library.imagezoom:library:1.0.4'
+
+//    api 'com.github.bumptech.glide:glide:3.7' matisse 的默认版本
+    //图片选择[排除内部25.3.1版本的库 已将源码搞进了工程]
+//    api('com.zhihu.android:matisse:0.4.3') {
+//        exclude module: 'support-v4'
+//        exclude module: 'appcompat-v7'
+//        exclude module: 'recyclerview-v7'
+//    }
+//    时间选择器
+    api 'com.contrarywind:Android-PickerView:4.1.7'
+
+//    悬浮窗
+//    api 'com.github.yhaolpz:FloatWindow:1.0.9'
+//    api 'com.github.zhenbinwei:KotlinFloatingView:1.0.0'
+}

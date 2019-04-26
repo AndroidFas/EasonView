@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">http</string>
+    <string name="loading_txt">玩命加载中...</string>
+
+    <!--网络提示-->
+    <string name="networt_unavailable_pls_check">连接服务器失败，请检查网络设置</string>
+    <string name="networt_unsteadiness">连接超时，请检查网络设置</string>
+    <string name="server_anomaly_try_later">服务器异常，请稍候再试</string>
+    <string name="response_check_anomaly_try_later">数据异常，更新版本试试</string>
+    <string name="request_fail">请求失败</string>
+    <string name="http_toast_busy">系统繁忙请稍候再试。</string>
+    <string name="http_toast_error">系统繁忙请稍候再试。</string>
+    <string name="acti_notity_suc">活动已设置提醒，谢谢关注！</string>
+    <string name="acti_notity_fail">活动已设置失败，请检查网络设置,重新关注！</string>
+    <string name="loading">请求中，请稍后</string>
+</resources>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <paths>
+        <external-path
+            name="camera_photos"
+            path="camera_photos"/>
+        <external-path
+            name="Zgono"
+            path="Zgono"/>
+
+        <external-path path="Android/data/com/zhigonghulian/zgono/" name="files_root" />
+        <external-path path="." name="external_storage_root" />
+    </paths>
+</resources>
