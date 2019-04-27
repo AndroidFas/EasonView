@@ -56,6 +56,6 @@ public class LastView extends View {
                 activity.addLog(ETouchEventActivity.LastView + "onTouchEvent：ACTION_CANCEL");
                 break;
         }
-        return activity.switchs[4][2][0] ? super.dispatchTouchEvent(event) : activity.switchs[4][2][1];
+        return activity.switchs[4][2][0] ? super.onTouchEvent(event) : activity.switchs[4][2][1];
     }
 }

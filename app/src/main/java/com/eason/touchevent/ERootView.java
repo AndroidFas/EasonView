@@ -55,7 +55,7 @@ public class ERootView extends FrameLayout {
                 activity.addLog(ETouchEventActivity.ERootView + "onInterceptTouchEvent：ACTION_CANCEL");
                 break;
         }
-        return activity.switchs[2][2][0] ? super.dispatchTouchEvent(ev) : activity.switchs[2][2][1];
+        return activity.switchs[2][2][0] ? super.onInterceptTouchEvent(ev) : activity.switchs[2][2][1];
     }
 
     @Override
@@ -74,6 +74,6 @@ public class ERootView extends FrameLayout {
                 activity.addLog(ETouchEventActivity.ERootView + "onTouchEvent：ACTION_CANCEL");
                 break;
         }
-        return activity.switchs[2][3][0] ? super.dispatchTouchEvent(event) : activity.switchs[2][3][1];
+        return activity.switchs[2][3][0] ? super.onTouchEvent(event) : activity.switchs[2][3][1];
     }
 }

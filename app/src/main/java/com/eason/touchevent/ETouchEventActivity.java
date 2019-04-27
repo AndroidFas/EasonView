@@ -42,8 +42,6 @@ public class ETouchEventActivity extends BaseActivity implements CompoundButton.
         ((Switch) findViewById(R.id.control_12_su)).setOnCheckedChangeListener(this);
         ((Switch) findViewById(R.id.control_11_su)).setChecked(true);
         ((Switch) findViewById(R.id.control_12_su)).setChecked(true);
-        switchs[1][1][0] = true;
-        switchs[1][2][0] = true;
 
         ((Switch) findViewById(R.id.control_21)).setOnCheckedChangeListener(this);
         ((Switch) findViewById(R.id.control_22)).setOnCheckedChangeListener(this);
@@ -161,44 +159,44 @@ public class ETouchEventActivity extends BaseActivity implements CompoundButton.
         return R.layout.touchevent_act_main;
     }
 
-//    @Override
-//    public boolean dispatchTouchEvent(MotionEvent ev) {
-//        switch (ev.getAction()) {
-//            case MotionEvent.ACTION_DOWN:
-//                addLog(ETouchEventActivity + "dispatchTouchEvent：ACTION_DOWN");
-//                break;
-//            case MotionEvent.ACTION_MOVE:
+    @Override
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+        switch (ev.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                addLog(ETouchEventActivity + "dispatchTouchEvent：ACTION_DOWN");
+                break;
+            case MotionEvent.ACTION_MOVE:
 //                addLog(ETouchEventActivity + "dispatchTouchEvent：ACTION_MOVE");
-//                break;
-//            case MotionEvent.ACTION_UP:
-//                addLog(ETouchEventActivity + "dispatchTouchEvent：ACTION_UP");
-//                break;
-//            case MotionEvent.ACTION_CANCEL:
-//                addLog(ETouchEventActivity + "dispatchTouchEvent：ACTION_CANCEL");
-//                break;
-//        }
-//        return switchs[1][1][0] ? super.dispatchTouchEvent(ev) : switchs[1][1][1];
-//    }
+                break;
+            case MotionEvent.ACTION_UP:
+                addLog(ETouchEventActivity + "dispatchTouchEvent：ACTION_UP");
+                break;
+            case MotionEvent.ACTION_CANCEL:
+                addLog(ETouchEventActivity + "dispatchTouchEvent：ACTION_CANCEL");
+                break;
+        }
+        return switchs[1][1][0] ? super.dispatchTouchEvent(ev) : switchs[1][1][1];
+    }
 
 
-//    @Override
-//    public boolean onTouchEvent(MotionEvent event) {
-//        switch (event.getAction()) {
-//            case MotionEvent.ACTION_DOWN:
-//                addLog(ETouchEventActivity + "onTouchEvent：ACTION_DOWN");
-//                break;
-//            case MotionEvent.ACTION_MOVE:
+    @Override
+    public boolean onTouchEvent(MotionEvent event) {
+        switch (event.getAction()) {
+            case MotionEvent.ACTION_DOWN:
+                addLog(ETouchEventActivity + "onTouchEvent：ACTION_DOWN");
+                break;
+            case MotionEvent.ACTION_MOVE:
 //                addLog(ETouchEventActivity + "onTouchEvent：ACTION_MOVE");
-//                break;
-//            case MotionEvent.ACTION_UP:
-//                addLog(ETouchEventActivity + "onTouchEvent：ACTION_UP");
-//                break;
-//            case MotionEvent.ACTION_CANCEL:
-//                addLog(ETouchEventActivity + "onTouchEvent：ACTION_CANCEL");
-//                break;
-//        }
-//        return switchs[1][2][0] ? super.dispatchTouchEvent(event) : switchs[1][2][1];
-//    }
+                break;
+            case MotionEvent.ACTION_UP:
+                addLog(ETouchEventActivity + "onTouchEvent：ACTION_UP");
+                break;
+            case MotionEvent.ACTION_CANCEL:
+                addLog(ETouchEventActivity + "onTouchEvent：ACTION_CANCEL");
+                break;
+        }
+        return switchs[1][2][0] ? super.onTouchEvent(event) : switchs[1][2][1];
+    }
 
 
 }

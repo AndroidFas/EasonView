@@ -54,7 +54,7 @@ public class FirstViewGroup extends FrameLayout {
                 activity.addLog(ETouchEventActivity.FirstViewGroup + "onInterceptTouchEvent：ACTION_CANCEL");
                 break;
         }
-        return activity.switchs[3][2][0] ? super.dispatchTouchEvent(ev) : activity.switchs[3][2][1];
+        return activity.switchs[3][2][0] ? super.onInterceptTouchEvent(ev) : activity.switchs[3][2][1];
     }
 
     @Override
@@ -73,6 +73,6 @@ public class FirstViewGroup extends FrameLayout {
                 activity.addLog(ETouchEventActivity.FirstViewGroup + "onTouchEvent：ACTION_CANCEL");
                 break;
         }
-        return activity.switchs[3][3][0] ? super.dispatchTouchEvent(event) : activity.switchs[3][3][1];
+        return activity.switchs[3][3][0] ? super.onTouchEvent(event) : activity.switchs[3][3][1];
     }
 }
