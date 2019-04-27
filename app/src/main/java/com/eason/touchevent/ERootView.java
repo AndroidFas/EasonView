@@ -27,7 +27,8 @@ public class ERootView extends FrameLayout {
                 activity.addLog(ETouchEventActivity.ERootView + "dispatchTouchEvent：ACTION_DOWN");
                 break;
             case MotionEvent.ACTION_MOVE:
-//                activity.addLog(ETouchEventActivity.ERootView + "dispatchTouchEvent：ACTION_MOVE");
+                if (activity.openMoveLog)
+                    activity.addLog(ETouchEventActivity.ERootView + "dispatchTouchEvent：ACTION_MOVE");
                 break;
             case MotionEvent.ACTION_UP:
                 activity.addLog(ETouchEventActivity.ERootView + "dispatchTouchEvent：ACTION_UP");
@@ -46,7 +47,8 @@ public class ERootView extends FrameLayout {
                 activity.addLog(ETouchEventActivity.ERootView + "onInterceptTouchEvent：ACTION_DOWN");
                 break;
             case MotionEvent.ACTION_MOVE:
-//                activity.addLog(ETouchEventActivity.ERootView + "onInterceptTouchEvent：ACTION_MOVE");
+                if (activity.openMoveLog)
+                    activity.addLog(ETouchEventActivity.ERootView + "onInterceptTouchEvent：ACTION_MOVE");
                 break;
             case MotionEvent.ACTION_UP:
                 activity.addLog(ETouchEventActivity.ERootView + "onInterceptTouchEvent：ACTION_UP");
@@ -65,7 +67,8 @@ public class ERootView extends FrameLayout {
                 activity.addLog(ETouchEventActivity.ERootView + "onTouchEvent：ACTION_DOWN");
                 break;
             case MotionEvent.ACTION_MOVE:
-//                activity.addLog(ETouchEventActivity.ERootView + "onTouchEvent：ACTION_MOVE");
+                if (activity.openMoveLog)
+                    activity.addLog(ETouchEventActivity.ERootView + "onTouchEvent：ACTION_MOVE");
                 break;
             case MotionEvent.ACTION_UP:
                 activity.addLog(ETouchEventActivity.ERootView + "onTouchEvent：ACTION_UP");

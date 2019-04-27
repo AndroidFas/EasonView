@@ -10,6 +10,7 @@ import android.widget.FrameLayout;
  */
 public class FirstViewGroup extends FrameLayout {
     private ETouchEventActivity activity;
+
     public FirstViewGroup(Context context) {
         super(context);
     }
@@ -26,7 +27,8 @@ public class FirstViewGroup extends FrameLayout {
                 activity.addLog(ETouchEventActivity.FirstViewGroup + "dispatchTouchEvent：ACTION_DOWN");
                 break;
             case MotionEvent.ACTION_MOVE:
-//                activity.addLog(ETouchEventActivity.FirstViewGroup + "dispatchTouchEvent：ACTION_MOVE");
+                if (activity.openMoveLog)
+                    activity.addLog(ETouchEventActivity.FirstViewGroup + "dispatchTouchEvent：ACTION_MOVE");
                 break;
             case MotionEvent.ACTION_UP:
                 activity.addLog(ETouchEventActivity.FirstViewGroup + "dispatchTouchEvent：ACTION_UP");
@@ -45,7 +47,8 @@ public class FirstViewGroup extends FrameLayout {
                 activity.addLog(ETouchEventActivity.FirstViewGroup + "onInterceptTouchEvent：ACTION_DOWN");
                 break;
             case MotionEvent.ACTION_MOVE:
-//                activity.addLog(ETouchEventActivity.FirstViewGroup + "onInterceptTouchEvent：ACTION_MOVE");
+                if (activity.openMoveLog)
+                    activity.addLog(ETouchEventActivity.FirstViewGroup + "onInterceptTouchEvent：ACTION_MOVE");
                 break;
             case MotionEvent.ACTION_UP:
                 activity.addLog(ETouchEventActivity.FirstViewGroup + "onInterceptTouchEvent：ACTION_UP");
@@ -64,7 +67,8 @@ public class FirstViewGroup extends FrameLayout {
                 activity.addLog(ETouchEventActivity.FirstViewGroup + "onTouchEvent：ACTION_DOWN");
                 break;
             case MotionEvent.ACTION_MOVE:
-//                activity.addLog(ETouchEventActivity.FirstViewGroup + "onTouchEvent：ACTION_MOVE");
+                if (activity.openMoveLog)
+                    activity.addLog(ETouchEventActivity.FirstViewGroup + "onTouchEvent：ACTION_MOVE");
                 break;
             case MotionEvent.ACTION_UP:
                 activity.addLog(ETouchEventActivity.FirstViewGroup + "onTouchEvent：ACTION_UP");

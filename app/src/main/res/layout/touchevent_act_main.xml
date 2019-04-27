@@ -148,12 +148,25 @@
                 android:layout_centerVertical="true"
                 android:layout_marginTop="@dimen/dp_10"
                 android:text="各个View返回值控制\n（打开-true;关闭-false）" />
+
+
+            <TextView
+                android:id="@+id/tv_open_move_log"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="是否开启ACTION_MOVE日志" />
+
+            <Switch
+                android:id="@+id/control_move_log"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
             <!--Activity-->
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:text="Activity:"
+                android:text="领导层-Activity:"
                 android:textColor="@android:color/holo_red_dark" />
 
             <LinearLayout
@@ -185,7 +198,7 @@
                         android:layout_height="wrap_content"
                         android:layout_centerVertical="true"
                         android:layout_toLeftOf="@+id/control_11_su"
-                        android:text="use super" />
+                        android:text="super-no close" />
 
                     <Switch
                         android:id="@+id/control_11_su"
@@ -244,7 +257,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:text="ERootViewGroup:"
+                android:text="部长-ERootViewGroup:"
                 android:textColor="@android:color/holo_orange_dark" />
 
             <LinearLayout
@@ -377,7 +390,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:text="FirstViewGroup:"
+                android:text="组长-FirstViewGroup:"
                 android:textColor="#FEE600" />
 
             <LinearLayout
@@ -465,8 +478,8 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:orientation="vertical"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/tv_control_33"
@@ -509,13 +522,13 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
-                android:text="LastView:"
+                android:text="员工-LastView:"
                 android:textColor="@android:color/holo_blue_dark" />
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:orientation="vertical"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/tv_control_41"

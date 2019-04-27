@@ -28,7 +28,8 @@ public class LastView extends View {
                 activity.addLog(ETouchEventActivity.LastView + "dispatchTouchEvent：ACTION_DOWN");
                 break;
             case MotionEvent.ACTION_MOVE:
-//                activity.addLog(ETouchEventActivity.LastView + "dispatchTouchEvent：ACTION_MOVE");
+                if (activity.openMoveLog)
+                    activity.addLog(ETouchEventActivity.LastView + "dispatchTouchEvent：ACTION_MOVE");
                 break;
             case MotionEvent.ACTION_UP:
                 activity.addLog(ETouchEventActivity.LastView + "dispatchTouchEvent：ACTION_UP");
@@ -47,7 +48,8 @@ public class LastView extends View {
                 activity.addLog(ETouchEventActivity.LastView + "onTouchEvent：ACTION_DOWN");
                 break;
             case MotionEvent.ACTION_MOVE:
-//                activity.addLog(ETouchEventActivity.LastView + "onTouchEvent：ACTION_MOVE");
+                if (activity.openMoveLog)
+                    activity.addLog(ETouchEventActivity.LastView + "onTouchEvent：ACTION_MOVE");
                 break;
             case MotionEvent.ACTION_UP:
                 activity.addLog(ETouchEventActivity.LastView + "onTouchEvent：ACTION_UP");

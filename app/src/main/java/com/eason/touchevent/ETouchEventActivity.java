@@ -22,13 +22,14 @@ public class ETouchEventActivity extends BaseActivity implements CompoundButton.
     private static final String key = "log";
 
     public static final String ETouchEventActivity = "领导层:";
-    public static final String ERootView = "部  长:";
-    public static final String FirstViewGroup = "组  长:";
-    public static final String LastView = "员  工:";
+    public static final String ERootView = "部    长:";
+    public static final String FirstViewGroup = "组    长:";
+    public static final String LastView = "员    工:";
     private List<HashMap<String, String>> datas = new ArrayList<>();
     private SimpleAdapter simpleAdapter;
 
     public boolean[][][] switchs = new boolean[5][5][5];
+    public boolean openMoveLog;
     private ListView logList;
 
     @Override
@@ -71,11 +72,13 @@ public class ETouchEventActivity extends BaseActivity implements CompoundButton.
         ((Switch) findViewById(R.id.control_42_su)).setOnCheckedChangeListener(this);
         ((Switch) findViewById(R.id.control_41_su)).setChecked(true);
         ((Switch) findViewById(R.id.control_42_su)).setChecked(true);
+
+        ((Switch) findViewById(R.id.control_move_log)).setOnCheckedChangeListener(this);
     }
 
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        Logger.d(ETouchEventActivity, "switch回调：" + buttonView.getId() + "  isChecked:" + isChecked);
+//        Logger.d(ETouchEventActivity, "switch回调：" + buttonView.getId() + "  isChecked:" + isChecked);
         switch (buttonView.getId()) {
             case R.id.control_11:
                 switchs[1][1][1] = isChecked;
@@ -137,6 +140,9 @@ public class ETouchEventActivity extends BaseActivity implements CompoundButton.
             case R.id.control_42_su:
                 switchs[4][2][0] = isChecked;
                 break;
+            case R.id.control_move_log:
+                openMoveLog = isChecked;
+                break;
         }
     }
 
@@ -166,7 +172,8 @@ public class ETouchEventActivity extends BaseActivity implements CompoundButton.
                 addLog(ETouchEventActivity + "dispatchTouchEvent：ACTION_DOWN");
                 break;
             case MotionEvent.ACTION_MOVE:
-//                addLog(ETouchEventActivity + "dispatchTouchEvent：ACTION_MOVE");
+                if (openMoveLog)
+                    addLog(ETouchEventActivity + "dispatchTouchEvent：ACTION_MOVE");
                 break;
             case MotionEvent.ACTION_UP:
                 addLog(ETouchEventActivity + "dispatchTouchEvent：ACTION_UP");
@@ -186,7 +193,8 @@ public class ETouchEventActivity extends BaseActivity implements CompoundButton.
                 addLog(ETouchEventActivity + "onTouchEvent：ACTION_DOWN");
                 break;
             case MotionEvent.ACTION_MOVE:
-//                addLog(ETouchEventActivity + "onTouchEvent：ACTION_MOVE");
+                if (openMoveLog)
+                    addLog(ETouchEventActivity + "onTouchEvent：ACTION_MOVE");
                 break;
             case MotionEvent.ACTION_UP:
                 addLog(ETouchEventActivity + "onTouchEvent：ACTION_UP");
