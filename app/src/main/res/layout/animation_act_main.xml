@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/tv_desc"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="矩形View的相关属性"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_x"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text=" X:"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_desc" />
+
+    <TextView
+        android:id="@+id/tv_y"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_40"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="      Y:"
+        app:layout_constraintLeft_toRightOf="@id/tv_x"
+        app:layout_constraintTop_toBottomOf="@+id/tv_desc" />
+
+    <TextView
+        android:id="@+id/tv_scrollX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="scrollX:"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_x" />
+
+    <TextView
+        android:id="@+id/tv_scrollY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_40"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="scrollY:"
+        app:layout_constraintLeft_toRightOf="@id/tv_scrollX"
+        app:layout_constraintTop_toBottomOf="@+id/tv_y" />
+
+
+    <TextView
+        android:id="@+id/tv_transLateX"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="transLateX:"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_scrollX" />
+
+    <TextView
+        android:id="@+id/tv_transLateY"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dp_40"
+        android:layout_marginTop="@dimen/dp_10"
+        android:text="transLateY:"
+        app:layout_constraintLeft_toRightOf="@id/tv_transLateX"
+        app:layout_constraintTop_toBottomOf="@+id/tv_scrollY" />
+
+    <!--滚动操作-->
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent">
+
+        <LinearLayout
+            android:id="@+id/ll_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:orientation="vertical">
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:onClick="scroll"
+                android:text="scroll" />
+
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:onClick="reset"
+                android:text="reset" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_xy"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/ll_btn"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/et_x"
+                android:layout_width="@dimen/dp_100"
+                android:layout_height="wrap_content"
+                android:hint="输入X"
+                android:inputType="numberDecimal" />
+
+            <EditText
+                android:id="@+id/et_y"
+                android:layout_width="@dimen/dp_100"
+                android:layout_height="wrap_content"
+                android:hint="输入Y"
+                android:inputType="numberDecimal" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/ll_xy"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="调用的滚动对象\n【打开为Activity的根View,关闭为深绿色区域】" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <Switch
+                    android:id="@+id/switch_view"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dp_10"
+                    android:text="是否打开ScrollBy" />
+
+                <Switch
+                    android:id="@+id/switch_scrollBy"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/iv_trans_view"
+        android:layout_width="@dimen/dp_200"
+        android:layout_height="@dimen/dp_100"
+        android:layout_marginTop="@dimen/dp_10"
+        android:background="@color/colorPrimaryDark"
+        android:padding="@dimen/dp_5"
+        app:layout_constraintTop_toBottomOf="@+id/tv_transLateY"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_getX"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="getX"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_getRawX"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="getRawX"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_getY"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="getY"
+                android:textColor="@color/white" />
+
+            <TextView
+                android:id="@+id/tv_getRawY"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="getRawY"
+                android:textColor="@color/white" />
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

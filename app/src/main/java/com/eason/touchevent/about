@@ -1,0 +1,15 @@
+1.AppCompatActivity
+    @Override
+        public boolean dispatchTouchEvent(MotionEvent ev) {
+            return super.dispatchTouchEvent(ev);
+        }
+ 2.Activity
+    public boolean dispatchTouchEvent(MotionEvent ev) {
+            if (ev.getAction() == MotionEvent.ACTION_DOWN) {
+                onUserInteraction();
+            }
+            if (getWindow().superDispatchTouchEvent(ev)) {
+                return true;
+            }
+            return onTouchEvent(ev);
+        }

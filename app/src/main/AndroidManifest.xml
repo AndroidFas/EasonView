@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".animation.ETranslateActivity" />
+        <activity android:name=".touchevent.ETouchEventActivity" />
     </application>
 
 </manifest>
