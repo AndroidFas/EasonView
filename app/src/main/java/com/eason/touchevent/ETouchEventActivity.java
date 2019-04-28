@@ -2,8 +2,12 @@ package com.eason.touchevent;
 
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Html;
+import android.text.Spanned;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.CompoundButton;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -21,22 +25,23 @@ import base.util.Logger;
 public class ETouchEventActivity extends BaseActivity implements CompoundButton.OnCheckedChangeListener {
     private static final String key = "log";
 
-    public static final String ETouchEventActivity = "领导层:";
+    public static final String ETouchEventActivity = "领    导:";
     public static final String ERootView = "部    长:";
     public static final String FirstViewGroup = "组    长:";
     public static final String LastView = "员    工:";
-    private List<HashMap<String, String>> datas = new ArrayList<>();
-    private SimpleAdapter simpleAdapter;
-
+    private List<String> datas = new ArrayList<>();
     public boolean[][][] switchs = new boolean[5][5][5];
     public boolean openMoveLog;
-    private ListView logList;
+    private RecyclerView logList;
+    private LogAdapter logAdapter;
 
     @Override
     protected void init() {
         logList = findViewById(R.id.log_list);
-        simpleAdapter = new SimpleAdapter(this, datas, R.layout.touchevent_item_log, new String[]{key}, new int[]{R.id.tv_log});
-        logList.setAdapter(simpleAdapter);
+        logList.setLayoutManager(new LinearLayoutManager(this));
+        logAdapter = new LogAdapter(this, datas);
+        logList.setAdapter(logAdapter);
+
         ((Switch) findViewById(R.id.control_11)).setOnCheckedChangeListener(this);
         ((Switch) findViewById(R.id.control_12)).setOnCheckedChangeListener(this);
         ((Switch) findViewById(R.id.control_11_su)).setOnCheckedChangeListener(this);
@@ -148,16 +153,14 @@ public class ETouchEventActivity extends BaseActivity implements CompoundButton.
 
     //子控件添加事件监听日志
     public void addLog(final String content) {
-        datas.add(new HashMap<String, String>() {{
-            put(key, content);
-        }});
-        simpleAdapter.notifyDataSetChanged();
-        logList.setSelection(simpleAdapter.getCount() - 1);
+        datas.add(content);
+        logAdapter.notifyDataSetChanged();
+        logList.smoothScrollToPosition(logAdapter.getItemCount() - 1);
     }
 
     public void clearLog(View view) {
         datas.clear();
-        simpleAdapter.notifyDataSetChanged();
+        logAdapter.notifyDataSetChanged();
     }
 
     @Override
