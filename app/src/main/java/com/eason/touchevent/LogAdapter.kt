@@ -9,9 +9,9 @@ import android.widget.TextView
 
 import com.eason.R
 
-class LogAdapter(private val context: Context, private val datas: List<String>) : RecyclerView.Adapter<*>() {
+class LogAdapter(private val context: Context, private val datas: List<String>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     override fun onBindViewHolder(p0: RecyclerView.ViewHolder, p1: Int) {
-        val content = datas[i]
+        val content = datas[p1]
         var color = ""
         if (content.contains(ETouchEventActivity.ETouchEventActivity)) {
             color = "#cc0000"
@@ -26,7 +26,7 @@ class LogAdapter(private val context: Context, private val datas: List<String>) 
             color = "#0099cc"
         }
         val replace = "<font color=\"$color\">$content</font>"
-        (viewHolder.itemView as TextView).text = Html.fromHtml(replace)
+        (p0.itemView as TextView).text = Html.fromHtml(replace)
     }
 
     override fun onCreateViewHolder(viewGroup: ViewGroup, i: Int): RecyclerView.ViewHolder {
