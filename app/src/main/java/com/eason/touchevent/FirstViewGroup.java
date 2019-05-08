@@ -24,59 +24,59 @@ public class FirstViewGroup extends FrameLayout {
     public boolean dispatchTouchEvent(MotionEvent ev) {
         switch (ev.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                activity.addLog(ETouchEventActivity.FirstViewGroup + "dispatchTouchEvent：ACTION_DOWN");
+                activity.addLog(ETouchEventActivity.Companion.getFirstViewGroup() + "dispatchTouchEvent：ACTION_DOWN");
                 break;
             case MotionEvent.ACTION_MOVE:
-                if (activity.openMoveLog)
-                    activity.addLog(ETouchEventActivity.FirstViewGroup + "dispatchTouchEvent：ACTION_MOVE");
+                if (activity.getOpenMoveLog())
+                    activity.addLog(ETouchEventActivity.Companion.getFirstViewGroup() + "dispatchTouchEvent：ACTION_MOVE");
                 break;
             case MotionEvent.ACTION_UP:
-                activity.addLog(ETouchEventActivity.FirstViewGroup + "dispatchTouchEvent：ACTION_UP");
+                activity.addLog(ETouchEventActivity.Companion.getFirstViewGroup() + "dispatchTouchEvent：ACTION_UP");
                 break;
             case MotionEvent.ACTION_CANCEL:
-                activity.addLog(ETouchEventActivity.FirstViewGroup + "dispatchTouchEvent：ACTION_CANCEL");
+                activity.addLog(ETouchEventActivity.Companion.getFirstViewGroup() + "dispatchTouchEvent：ACTION_CANCEL");
                 break;
         }
-        return activity.switchs[3][1][0] ? super.dispatchTouchEvent(ev) : activity.switchs[3][1][1];
+        return activity.getSwitchs()[3][1][0] ? super.dispatchTouchEvent(ev) : activity.getSwitchs()[3][1][1];
     }
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent ev) {
         switch (ev.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                activity.addLog(ETouchEventActivity.FirstViewGroup + "onInterceptTouchEvent：ACTION_DOWN");
+                activity.addLog(ETouchEventActivity.Companion.getFirstViewGroup() + "onInterceptTouchEvent：ACTION_DOWN");
                 break;
             case MotionEvent.ACTION_MOVE:
-                if (activity.openMoveLog)
-                    activity.addLog(ETouchEventActivity.FirstViewGroup + "onInterceptTouchEvent：ACTION_MOVE");
+                if (activity.getOpenMoveLog())
+                    activity.addLog(ETouchEventActivity.Companion.getFirstViewGroup() + "onInterceptTouchEvent：ACTION_MOVE");
                 break;
             case MotionEvent.ACTION_UP:
-                activity.addLog(ETouchEventActivity.FirstViewGroup + "onInterceptTouchEvent：ACTION_UP");
+                activity.addLog(ETouchEventActivity.Companion.getFirstViewGroup() + "onInterceptTouchEvent：ACTION_UP");
                 break;
             case MotionEvent.ACTION_CANCEL:
-                activity.addLog(ETouchEventActivity.FirstViewGroup + "onInterceptTouchEvent：ACTION_CANCEL");
+                activity.addLog(ETouchEventActivity.Companion.getFirstViewGroup() + "onInterceptTouchEvent：ACTION_CANCEL");
                 break;
         }
-        return activity.switchs[3][2][0] ? super.onInterceptTouchEvent(ev) : activity.switchs[3][2][1];
+        return activity.getSwitchs()[3][2][0] ? super.onInterceptTouchEvent(ev) : activity.getSwitchs()[3][2][1];
     }
 
     @Override
     public boolean onTouchEvent(MotionEvent event) {
         switch (event.getAction()) {
             case MotionEvent.ACTION_DOWN:
-                activity.addLog(ETouchEventActivity.FirstViewGroup + "onTouchEvent：ACTION_DOWN");
+                activity.addLog(ETouchEventActivity.Companion.getFirstViewGroup() + "onTouchEvent：ACTION_DOWN");
                 break;
             case MotionEvent.ACTION_MOVE:
-                if (activity.openMoveLog)
-                    activity.addLog(ETouchEventActivity.FirstViewGroup + "onTouchEvent：ACTION_MOVE");
+                if (activity.getOpenMoveLog())
+                    activity.addLog(ETouchEventActivity.Companion.getFirstViewGroup() + "onTouchEvent：ACTION_MOVE");
                 break;
             case MotionEvent.ACTION_UP:
-                activity.addLog(ETouchEventActivity.FirstViewGroup + "onTouchEvent：ACTION_UP");
+                activity.addLog(ETouchEventActivity.Companion.getFirstViewGroup() + "onTouchEvent：ACTION_UP");
                 break;
             case MotionEvent.ACTION_CANCEL:
-                activity.addLog(ETouchEventActivity.FirstViewGroup + "onTouchEvent：ACTION_CANCEL");
+                activity.addLog(ETouchEventActivity.Companion.getFirstViewGroup() + "onTouchEvent：ACTION_CANCEL");
                 break;
         }
-        return activity.switchs[3][3][0] ? super.onTouchEvent(event) : activity.switchs[3][3][1];
+        return activity.getSwitchs()[3][3][0] ? super.onTouchEvent(event) : activity.getSwitchs()[3][3][1];
     }
 }
